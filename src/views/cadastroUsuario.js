@@ -20,7 +20,7 @@ class CadastroUsaurio extends React.Component {
 
 
     return (
-      <div className="container">
+      
         <Card title="Cadastro de usuario">
           <div className="row">
             <div className="col-lg-12">
@@ -55,7 +55,7 @@ class CadastroUsaurio extends React.Component {
             </div>
           </div>
         </Card>
-      </div>
+     
     )
   }
 }
