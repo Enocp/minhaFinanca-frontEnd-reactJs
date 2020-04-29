@@ -12,14 +12,17 @@ class Login extends React.Component {
     Senha: ''
   }
 
-  entrar = () => {
+  entrar = async () => {
+   
     Axios
       .post('http://localhost:8080/api/usuarios/autenticar', {
         email: this.state.email,
         senha: this.state.senha
       }).then(response => {
+        localStorage.setItem('_usuario_logado', JSON.stringify(response.data))
         this.props.history.push('/home')
       }).catch(erro => {
+        console.log('entrou')
         this.setState({ mensagemErro: erro.response.data })
       })
   }
@@ -30,7 +33,6 @@ class Login extends React.Component {
 
   render() {
     return (
-
 
       <div className="row">
         <div className="col-md-6" style={{ position: 'relative', left: '300px' }}>
